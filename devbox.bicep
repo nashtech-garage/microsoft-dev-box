@@ -1,7 +1,7 @@
 // Variables
 param devCenterName string
 
-param region string
+//param region string
 
 // DevCenter Resource
 resource devCenter 'Microsoft.DevCenter/devcenters@2023-04-01' = {
