@@ -1,6 +1,6 @@
 // Variables
 param devCenterName string
-param projectname string
+param projectName string
 param devBoxName string
 param region string
 param imageId string
@@ -15,7 +15,7 @@ resource devCenter 'Microsoft.DevCenter/devcenters@2023-04-01' = {
 
 // Project Resource
 resource project 'Microsoft.DevCenter/projects@2023-04-01' = {
-  name: projectname
+  name: projectName
   location: region
   properties: {
     devCenterId: devCenter.id
@@ -46,7 +46,7 @@ resource devboxDefinition 'Microsoft.DevCenter/devcenters/devboxdefinitions@2023
 
 // Network Resource (Virtual Network)
 resource vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
-  name: '${projectname}-vnet'
+  name: '${projectName}-vnet'
   location: region
   properties: {
     addressSpace: {
@@ -56,7 +56,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
     }
     subnets: [
       {
-        name: '${projectname}-vnet-sub'
+        name: '${projectName}-vnet-sub'
         properties: {
           addressPrefix: '10.0.0.0/24'
         }
