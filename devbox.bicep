@@ -2,7 +2,7 @@
 param devCenterName string
 param projectname string
 param devBoxName string
-param region string = 'Central US'
+param region string
 param imageId string
 
 
